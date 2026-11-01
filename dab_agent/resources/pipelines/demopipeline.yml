@@ -1,0 +1,14 @@
+resources:
+  pipelines:
+    pipeline_demo_pipeline:
+      name: demo_pipeline
+      libraries:
+        - glob:
+            include: ../../src/pipelines/demo_pipeline/transformations/**
+      schema: default
+      continuous: false
+      photon: true
+      channel: CURRENT
+      catalog: ${var.catalog_name}
+      serverless: true
+      root_path: ../../src/pipelines/demo_pipeline
